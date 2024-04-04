@@ -76,14 +76,14 @@ node --version
 npm -v
 ```
 
-### 4. Clone nodejs-ssl-server repository
+### 4. Clone backend repository
 
 ```sh
 cd /home/ubuntu
 ```
 
 ```sh
-git clone https://github.com/saasscaleup/nodejs-ssl-server.git
+git clone https://Your-PAT@github.com/MBA-997/cloud-backend.git
 ```
 
 ### 5. Run node app.js (Make sure everything working)
@@ -109,7 +109,7 @@ npm install -g pm2 # may require sudo
 ### 7. Starting the app with pm2 (Run nodejs in background and when server restart)
 
 ```sh
-pm2 start app.js --name=nodejs-ssl-server
+pm2 start app.js --name=backend-server
 ```
 
 ```sh
