@@ -6,7 +6,21 @@ How to deploy nodejs app to AWS EC2 Ubuntu 22 Server with free SSL and Nginx rev
 
 ### 1. Launch amazon ubuntu server in aws + Attach Elastic IP to the new instance
 
-### 2. ssh to ubuntu to install packages
+### 2.1 Change permissions of .pem file
+
+## For Windows
+```sh
+icacls your-key.pem /reset
+icacls your-key.pem /inheritance:r
+icacls your-key.pem /grant:r "%USERNAME%:R"
+```
+
+## For Linux/MacOS
+```sh
+sudo chmod 400 your-key.pem
+```
+
+### 2.2 ssh to ubuntu to install packages
 
 ```sh
 ssh -i <key.pem> ubuntu@<ip-address> -v
