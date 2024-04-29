@@ -96,6 +96,8 @@ npm -v
 cd /home/ubuntu
 ```
 
+Be sure to create a PAT (Personal Access Token) in developer settings on your GitHub profile, and replace it in the git clone command
+
 ```sh
 git clone https://Your-PAT@github.com/MBA-997/cloud-backend.git
 ```
@@ -270,5 +272,9 @@ sudo certbot renew --dry-run
 ```
 
 ### 11. Visit your website HTTPS://<your website>
+
+### 12. Setup and run deployment.sh for automation
+
+Replace or adjust commands as needed to automate the deployment of your server for future
 
 Enjoy Your free Nodejs server with Free SSL :)
