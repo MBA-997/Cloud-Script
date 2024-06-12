@@ -111,9 +111,9 @@ sudo systemctl restart mongod
 
 ### 11. Modify the security group to allow a new rule
 
-Type: Custom TCP
-Protocol: TCP
-Port Range: 27017
+Type: Custom TCP \n
+Protocol: TCP \n
+Port Range: 27017 \n
 Source: 0.0.0.0/0
 
 Save the rules.
@@ -124,7 +124,7 @@ Save the rules.
 mongosh --host your_instance_ip --port 27017
 ```
 
-### 13. Conenct to your mongo on AWS
+### 13. Connect to your mongo on AWS Command Prompt
 
 ```sh
 mongosh
@@ -146,6 +146,10 @@ db.createUser({
 ```
 
 Exit Mongo Shell and configure Mongo
+
+```sh
+exit
+```
 
 ```sh
 sudo vim /etc/mongod.conf
