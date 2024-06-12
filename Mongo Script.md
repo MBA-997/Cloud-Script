@@ -1,5 +1,9 @@
 # MONGO DB SCRIPT
 
+### 0. Before Starting
+
+Make sure to have mongo shell installed on your computer, and have its bin folder path added to environment variable of Windows. Let's begin.
+
 ### 1. Connect to AWS Ubuntu server
 
 ```sh
