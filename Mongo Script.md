@@ -92,7 +92,7 @@ Now, connect to your application to the database using this string, where mydata
 'mongodb://localhost:27017/mydatabase'
 ```
 
-#### Optionally, if you want to access your database from any development environment and not just the cloud, then set it to:
+### Optionally, if you want to access your database from any development environment and not just the cloud, then set it to:
 
 ```sh
 bindIp: 0.0.0.0
@@ -105,7 +105,7 @@ Restart mongo to implement changes
 sudo systemctl restart mongod
 ```
 
-#### Modify the security group to allow a new rule
+### 11. Modify the security group to allow a new rule
 
 Type: Custom TCP
 Protocol: TCP
@@ -114,8 +114,56 @@ Source: 0.0.0.0/0
 
 Save the rules.
 
-#### Connect to your Mongo remotely
+### 12. Test Connection to your Mongo remotely
 
 ```sh
-mongo --host your_instance_ip --port 27017
+mongosh --host your_instance_ip --port 27017
 ```
+
+### 13. Conenct to your mongo on AWS
+
+```sh
+mongosh
+```
+
+Once connected, run these commands
+
+```sh
+use DATABASE_NAME
+```
+
+Make sure to change password to something more complex
+```sh
+db.createUser({
+  user: "admin",
+  pwd: "password",
+  roles: [{ role: "dbOwner", db: "DATABASE_NAME" }]
+})
+```
+
+Exit Mongo Shell and configure Mongo
+
+```sh
+sudo vim /etc/mongod.conf
+```
+
+Add this comment below security comment
+
+```sh
+security:
+  authorization: "enabled"
+```
+
+Exit and restart Mongo
+
+```sh
+sudo systemctl restart mongod
+```
+
+### 14. Your Mongo Connection string will look something like this
+
+```sh
+mongo --host your_instance_ip --port 27017 -u "admin" -p "password" --authenticationDatabase "DATABASE_NAME"
+```
+
+## 15. Congrats, you have successfully deployed MongoDB on your server with internet Access.
