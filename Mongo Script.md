@@ -171,7 +171,7 @@ sudo systemctl restart mongod
 ### 14. Your Mongo Connection string will look something like this
 
 ```sh
-mongo --host your_instance_ip --port 27017 -u "admin" -p "password" --authenticationDatabase "DATABASE_NAME"
+mongosh --host your_instance_ip --port 27017 -u "admin" -p "password" --authenticationDatabase "DATABASE_NAME"
 ```
 
 ## 15. Congrats, you have successfully deployed MongoDB on your server with internet Access.
