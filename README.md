@@ -147,7 +147,7 @@ sudo apt install nginx
 ```
 
 ```sh
-sudo nano /etc/nginx/sites-available/default
+sudo vim /etc/nginx/sites-available/default
 ```
 
 #### Add the following to the location part of the server block
@@ -208,7 +208,7 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 #### 10.2 Confirming Nginx’s Configuration
 
 ```sh
-sudo nano /etc/nginx/sites-available/default
+sudo vim /etc/nginx/sites-available/default
 ```
 
 let edit this line:
@@ -230,7 +230,7 @@ sudo systemctl reload nginx
 #### 10.3 Obtaining an FREE SSL Certificate
 
 ```sh
-sudo certbot --nginx -d app.example.com
+sudo certbot --nginx
 ```
 
 Output:
