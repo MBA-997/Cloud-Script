@@ -125,7 +125,7 @@ npm install -g pm2 # may require sudo
 ### 7. Starting the app with pm2 (Run nodejs in background and when server restart)
 
 ```sh
-pm2 start app.js --name=backend-server
+pm2 start index.js --name=backend-server
 ```
 
 ```sh
